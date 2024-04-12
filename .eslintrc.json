@@ -1,0 +1,55 @@
+{
+  "extends": ["react-app", "plugin:jsx-a11y/recommended", "prettier", "plugin:import/recommended"],
+  "plugins": ["jsx-a11y", "prettier", "react", "react-hooks", "import"],
+  "env": {
+    "jest": true,
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "quotes": ["error", "single"],
+    "comma-dangle": ["error", "always-multiline"],
+    "no-trailing-spaces": "error",
+    "semi": "error",
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"]
+      }
+    ],
+    "import/no-unresolved": [
+      2,
+      {
+        "commonjs": true,
+        "amd": true
+      }
+    ],
+    "import/named": 2,
+    "import/namespace": 2,
+    "import/default": 2,
+    "import/export": 2,
+    "react-hooks/exhaustive-deps": 0,
+    "jsx-a11y/no-noninteractive-tabindex": 0,
+    "jsx-a11y/no-autofocus": 0
+  },
+  "root": true,
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"],
+        "moduleDirectory": ["node_modules", "./", "src/"]
+      }
+    }
+  }
+}

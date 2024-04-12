@@ -1,0 +1,97 @@
+{
+  "name": "source-base",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "npm run lint:js",
+    "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts",
+    "lint:eslint:fix": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts --fix .",
+    "lint:js": "npm run lint:eslint -- . ",
+    "lint:staged": "lint-staged",
+    "prepare": "husky install"
+  },
+  "pre-commit": "lint:staged",
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "npm run lint:eslint:fix",
+      "git add --force"
+    ],
+    "*.jsx": [
+      "prettier --write",
+      "npm run lint:eslint:fix",
+      "git add --force"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add --force"
+    ],
+    "*.scss": [
+      "prettier --write",
+      "git add --force"
+    ]
+  },
+  "dependencies": {
+    "@formatjs/intl-localematcher": "^0.5.4",
+    "@heroicons/react": "^2.0.18",
+    "@hookform/resolvers": "^3.3.2",
+    "@tanstack/react-query": "5.12.2",
+    "accept-language": "^3.0.18",
+    "axios": "1.6.2",
+    "classnames": "2.3.2",
+    "dayjs": "1.11.10",
+    "framer-motion": "^10.18.0",
+    "lodash": "4.17.21",
+    "nanoid": "^5.0.4",
+    "negotiator": "^0.6.3",
+    "next": "14.0.3",
+    "next-i18n-router": "^5.2.0",
+    "next-i18next": "^15.2.0",
+    "qs": "6.11.2",
+    "react": "18",
+    "react-dom": "18",
+    "react-hook-form": "7.48.2",
+    "react-js-pagination": "^3.0.3",
+    "react-number-format": "^5.3.1",
+    "react-qr-code": "^2.0.12",
+    "react-select": "5.8.0",
+    "react-toastify": "^9.1.3",
+    "server-only": "^0.0.1",
+    "sharp": "^0.33.1",
+    "swiper": "^11.0.5",
+    "tw-elements-react": "^1.0.0-alpha2",
+    "universal-cookie": "6.1.1",
+    "yup": "^1.3.3",
+    "zustand": "4.4.7"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "6.13.2",
+    "@typescript-eslint/parser": "6.13.2",
+    "autoprefixer": "10.0.1",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.32.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-airbnb-base": "13.1.0",
+    "eslint-config-next": "13.1.6",
+    "eslint-config-prettier": "4.1.0",
+    "eslint-config-react-app": "6.0.0",
+    "eslint-import-resolver-webpack": "0.11.1",
+    "eslint-plugin-flowtype": "5.7.0",
+    "eslint-plugin-import": "2.23.3",
+    "eslint-plugin-jest": "24.3.5",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-prettier": "3.0.1",
+    "eslint-plugin-react": "7.23.2",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "eslint-plugin-testing-library": "4.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "postcss": "8",
+    "pre-commit": "^1.2.2",
+    "prettier": "3.1.0",
+    "tailwindcss": "3.3.0"
+  }
+}
